@@ -32,40 +32,46 @@ var people = [
 	Image: "http://popcrush.com/files/2014/12/usher.jpg?w=630", 
 	Lifespan: "1978 - Present"}
 ];
+$(document).ready(function (){
+	//Create an input field dynamically with jQuery
+	
+	$("div.loadpage")
+		.append('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
+	
+	//loop over array and place into DOM
+	$.each(people, function (index, value){
+		$("div.peopleContainer")
+			.append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
+	});
+	
+	//add border to selected section and set focus to input field
+	$("section")
+		.click(function(){
+			$(".selected")
+				.each(function() {
+					$(this)
+						.removeClass("selected");
+			});
+		$(this)
+			.addClass("selected");
+		$(".userInput").focus();
+	});
+	
+	//replace bio information on selected element when typing in input field
+	$(".userInput")
+		.keyup(function (event) {
+			var value = $(this)
+				.val()
+				$("section.selected")
+					.find("p")
+						.text(value);
+	//clear input field on enter key
+		if (event.which == 13) {
+			$(".userInput").val("");
+		}
+	});
 
-//Create an input field dynamically with jQuery
-
-$("div.loadpage")
-	.append('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
-
-//loop over array and place into DOM
-$.each(people, function (index, value){
-	$("div.peopleContainer")
-		.append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 });
-
-//add border to selected section and set focus to input field
-$("section")
-	.click(function(){
-		$(".selected")
-			.each(function() {
-				$(this)
-					.removeClass("selected");
-		});
-	$(this)
-		.addClass("selected");
-	$(".userInput").focus();
-});
-
-//replace bio information on selected element when typing in input field
-$(".userInput")
-	.keyup(function () {
-		var value = $(this)
-			.val()
-			$("section.selected").find("p")
-			.text(value);
-});
-
 
 
 
