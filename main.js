@@ -44,7 +44,7 @@ $.each(people, function (index, value){
 		.append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 });
 
-//add border to selected section
+//add border to selected section and set focus to input field
 $("section")
 	.click(function(){
 		$(".selected")
@@ -55,6 +55,15 @@ $("section")
 	$(this)
 		.addClass("selected");
 	$(".userInput").focus();
+});
+
+//replace bio information on selected element when typing in input field
+$(".userInput")
+	.keyup(function () {
+		var value = $(this)
+			.val()
+			$("section.selected").find("p")
+			.text(value);
 });
 
 
