@@ -34,14 +34,13 @@ var people = [
 ];
 $(document).ready(function (){
 	//Create an input field dynamically with jQuery
-	
-	$("div.loadpage")
-		.append('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
+	$(".loadpage")
+		.prepend('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
 	
 	//loop over array and place into DOM
 	$.each(people, function (index, value){
 		$("div.peopleContainer")
-			.append(`<section><h2> ${value.Name}</h2><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
+			.append(`<section><h2> ${value.Name}</h2><h3>${value.Title}</h3><img src='${value.Image}' class="img-rounded"><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 	});
 
 
