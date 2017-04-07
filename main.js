@@ -1,3 +1,6 @@
+
+// Create an array of objects that represents famous people (see structure below).
+
 var people = [
 	{Name: "Justin Timberlake", 
 	Title: "Singer/Songwriter",
@@ -35,8 +38,9 @@ var people = [
 
 $("div.loadpage").append('<input type="text" name="userInput" placeholder="Please enter Bio here...">');
 
-
+//loop over array and place into DOM
 $.each(people, function (index, value){
 	console.log(value.Name);
 	$("div.peopleContainer").append(`<h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 });
+
