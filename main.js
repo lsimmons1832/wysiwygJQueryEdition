@@ -41,8 +41,13 @@ $(document).ready(function (){
 	//loop over array and place into DOM
 	$.each(people, function (index, value){
 		$("div.peopleContainer")
-			.append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
+			.append(`<section><h2> ${value.Name}</h2><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 	});
+
+
+	//set color property for each section
+	$(".peopleContainer").find("section:nth-child(even)").css("background-color", "#274665");
+	$(".peopleContainer").find("section:nth-child(odd)").css("background-color", "#FFDF54");
 	
 	//add border to selected section and set focus to input field
 	$("section")
@@ -70,6 +75,7 @@ $(document).ready(function (){
 			$(".userInput").val("");
 		}
 	});
+
 
 });
 

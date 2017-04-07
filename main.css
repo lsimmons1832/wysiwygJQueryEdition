@@ -1,5 +1,6 @@
 body{
-	color: gray;
+	color:  #BF50B0;
+	background-color: #7D847C;
 }
 
 .peopleContainer{
@@ -12,7 +13,9 @@ section{
 	max-height: 800px;
 	width: 400px;
 	margin: 10px;
+	padding: 3px;
 	display: inline-block;
+	text-align: center;
 }
 
 img {
@@ -21,5 +24,14 @@ img {
 }
 
 .selected{
-	border: 3px dotted red;
+	border: 3px dotted #70B582;
 }
+
+p{
+	text-align: left;
+}
+
+h1{
+	color: #274665;
+}
+
