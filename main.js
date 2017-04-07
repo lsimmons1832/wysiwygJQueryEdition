@@ -1,4 +1,3 @@
-
 // Create an array of objects that represents famous people (see structure below).
 
 var people = [
@@ -36,20 +35,26 @@ var people = [
 
 //Create an input field dynamically with jQuery
 
-$("div.loadpage").append('<input type="text" name="userInput" placeholder="Please enter Bio here...">');
+$("div.loadpage")
+	.append('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
 
 //loop over array and place into DOM
 $.each(people, function (index, value){
-	$("div.peopleContainer").append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
+	$("div.peopleContainer")
+		.append(`<section><h1> ${value.Name}</h1><h3>${value.Title}</h3><img src='${value.Image}'><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
 });
 
 //add border to selected section
 $("section")
 	.click(function(){
-	$(".selected").each(function() {
-  $(this).removeClass("selected");
-});
-	$(this).addClass("selected");
+		$(".selected")
+			.each(function() {
+				$(this)
+					.removeClass("selected");
+		});
+	$(this)
+		.addClass("selected");
+	$(".userInput").focus();
 });
 
 
