@@ -1,5 +1,43 @@
-
 body{
-
-	color: gray;
+	color:  #BF50B0;
+	background-color: #7D847C;
 }
+
+input{
+	position: relative;
+	z-index:1000;
+	margin: 5px;
+}
+
+.peopleContainer{
+	display: flex;
+	margin auto 0;
+}
+
+section{
+	border: 2px solid black;
+	max-height: 800px;
+	width: 400px;
+	margin: 10px;
+	padding: 3px;
+	text-align: center;
+	
+}
+
+img {
+	height: 300px;
+	width: 380px;
+}
+
+.selected{
+	border: 3px dotted #70B582;
+}
+
+p{
+	text-align: left;
+}
+
+h1{
+	color: #274665;
+}
+
