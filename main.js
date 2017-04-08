@@ -34,22 +34,22 @@ var people = [
 ];
 $(document).ready(function (){
 	//Create an input field dynamically with jQuery
-	$(".loadpage")
-		.prepend('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
+	// $(".loadpage")
+	// 	.prepend('<input type="text" class="userInput" name="userInput" placeholder="Please enter Bio here...">');
 	
 	//loop over array and place into DOM
 	$.each(people, function (index, value){
 		$("div.peopleContainer")
-			.append(`<section><h2> ${value.Name}</h2><h3>${value.Title}</h3><img src='${value.Image}' class="img-rounded"><p>${value.Bio}</p><h3>${value.Lifespan}</h3></section>`);
+			.append(`<div class="col-md-4 section"><h2> ${value.Name}</h2><h3>${value.Title}</h3><img src='${value.Image}' class="img-rounded"><p>${value.Bio}</p><h3>${value.Lifespan}</h3></div>`);
 	});
 
 
 	//set color property for each section
-	$(".peopleContainer").find("section:nth-child(even)").css("background-color", "#274665");
-	$(".peopleContainer").find("section:nth-child(odd)").css("background-color", "#FFDF54");
+	$(".peopleContainer").find("div.col-md-4:nth-child(even)").css("background-color", "#274665");
+	$(".peopleContainer").find("div.col-md-4:nth-child(odd)").css("background-color", "#FFDF54");
 	
 	//add border to selected section and set focus to input field
-	$("section")
+	$(".section")
 		.click(function(){
 			$(".selected")
 				.each(function() {
@@ -66,7 +66,7 @@ $(document).ready(function (){
 		.keyup(function (event) {
 			var value = $(this)
 				.val()
-				$("section.selected")
+				$("div.selected")
 					.find("p")
 						.text(value);
 	//clear input field on enter key

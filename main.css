@@ -3,18 +3,14 @@ body{
 	background-color: #7D847C;
 }
 
-input{
+.userinput{
 	position: relative;
 	z-index:1000;
 	margin: 5px;
 }
 
-.peopleContainer{
-	display: flex;
-	margin auto 0;
-}
 
-section{
+.col-md-4{
 	border: 2px solid black;
 	max-height: 800px;
 	width: 400px;
@@ -35,6 +31,7 @@ img {
 
 p{
 	text-align: left;
+	padding: 2px;
 }
 
 h1{
