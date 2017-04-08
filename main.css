@@ -3,21 +3,13 @@ body{
 	background-color: #7D847C;
 }
 
-.userinput{
-	position: relative;
-	z-index:1000;
-	margin: 5px;
-}
-
-
 .col-md-4{
 	border: 2px solid black;
-	max-height: 800px;
+	height: 800px;
 	width: 400px;
 	margin: 10px;
 	padding: 3px;
 	text-align: center;
-	
 }
 
 img {
